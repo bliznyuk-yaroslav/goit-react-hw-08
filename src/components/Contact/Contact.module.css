@@ -1,0 +1,22 @@
+.cont {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  width: 200px;
+  height: 50px;
+  margin: auto;
+  border: 1px solid silver;
+  align-self: center;
+}
+.icon {
+  padding-right: 10px;
+  color: green;
+}
+.text {
+  width: 350px;
+  display: flex;
+  align-items: center;
+}
