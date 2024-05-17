@@ -1,0 +1,22 @@
+.nav {
+  display: flex;
+  justify-content: center;
+  background-color: #5b92e5;
+  width: 100%;
+}
+.link {
+  display: inline-block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  margin: 0 10px;
+}
+
+.link:hover {
+  color: green;
+}
+
+.active {
+  background-color: blueviolet;
+  color: #fff;
+}
