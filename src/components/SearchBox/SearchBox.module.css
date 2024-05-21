@@ -15,10 +15,5 @@
   height: 30px;
   color: black;
   border-radius: 42px;
-  background-image: linear-gradient(
-    to right,
-    rgba(158, 239, 225, 0.2) 0%,
-    rgba(72, 48, 240, 0.2) 51%,
-    rgba(158, 239, 225, 0.2) 100%
-  );
+  padding: 10px;
 }

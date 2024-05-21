@@ -4,19 +4,15 @@
   display: flex;
   justify-content: space-between;
 }
-.btn {
-  width: 200px;
-  height: 50px;
-  margin: auto;
-  border: 1px solid silver;
-  align-self: center;
-}
 .icon {
   padding-right: 10px;
-  color: #4830f0;
+  width: 30px;
+  height: 25px;
+  color: #1976d2;
 }
 .text {
   width: 350px;
   display: flex;
+  font-size: 18px;
   align-items: center;
 }

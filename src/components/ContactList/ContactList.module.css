@@ -4,12 +4,7 @@
   display: block;
   padding: 0.4em 0.4em 0.4em 2em;
   margin: 0.5em 0;
-  background-image: linear-gradient(
-    to right,
-    #9eefe1 0%,
-    #4830f0 100%,
-    #9eefe1 100%
-  );
+
   color: #444;
   text-decoration: none;
   border-radius: 0.3em;

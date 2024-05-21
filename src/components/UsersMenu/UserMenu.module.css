@@ -1,35 +1,14 @@
-.wrapper {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  width: 300px;
+.container {
+  text-align: center;
 }
 
 .username {
-  font-weight: 700;
-  font-size: 20px;
-  width: 150px;
-}
-.btn {
-  text-decoration: none;
-  display: inline-block;
+  font-size: 1.5rem;
+  text-decoration: underline;
   color: white;
-  /* padding: 20px 30px; */
-  margin: 10px 20px;
-  border-radius: 10px;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  background-image: linear-gradient(
-    to right,
-    #9eefe1 0%,
-    #4830f0 51%,
-    #9eefe1 100%
-  );
-  background-size: 200% auto;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  transition: 0.5s;
 }
-.btn:hover {
-  background-position: right center;
+
+.btn {
+  font-size: 1rem;
+  color: #1976d2;
 }
