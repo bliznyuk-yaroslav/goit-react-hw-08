@@ -26,33 +26,32 @@ export default function App() {
   }, [dispatch]);
 
   return isRefreshing ? (
-    <p>Refreshing user please wait...</p>
+    <p>Refreshing user, please wait...</p>
   ) : (
-    <Layout>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route
-          path="/register"
-          element={
-            <RegisterRoute component={<RegistrationPage />} redirectTo="/" />
-          }
-        />
-        <Route
-          path="/login"
-          element={
-            <RegistrationPage
-              component={<LoginPage />}
-              redirectTo="/contacts"
-            />
-          }
-        />
-        <Route
-          path="/contacts"
-          element={
-            <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
-          }
-        />
-      </Routes>
-    </Layout>
+    <Suspense fallback={<p>Loading...</p>}>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route
+            path="/register"
+            element={
+              <RegisterRoute component={<RegistrationPage />} redirectTo="/" />
+            }
+          />
+          <Route
+            path="/login"
+            element={
+              <RegisterRoute component={<LoginPage />} redirectTo="/contacts" />
+            }
+          />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
+            }
+          />
+        </Routes>
+      </Layout>
+    </Suspense>
   );
 }

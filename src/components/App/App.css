@@ -3,6 +3,12 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-image: linear-gradient(
+    to right,
+    rgba(158, 239, 225, 0.2) 0%,
+    rgba(72, 48, 240, 0.2) 51%,
+    rgba(158, 239, 225, 0.2) 100%
+  );
 }
 
 .logo {

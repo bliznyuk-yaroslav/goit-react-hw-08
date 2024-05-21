@@ -1,14 +1,27 @@
 .item {
-  list-style-type: none;
-  border: 1px solid var(--LIGHT-SLATE, #8e8f99);
+  position: relative;
   font-size: 20px;
-  width: 500px;
+  display: block;
+  padding: 0.4em 0.4em 0.4em 2em;
+  margin: 0.5em 0;
+  background-image: linear-gradient(
+    to right,
+    #9eefe1 0%,
+    #4830f0 100%,
+    #9eefe1 100%
+  );
+  color: #444;
+  text-decoration: none;
+  border-radius: 0.3em;
+  transition: 0.3s ease-out;
 }
 
 .list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 30px;
+  width: 700px;
+  margin: 0 auto;
+  counter-reset: li;
+  list-style: none;
+  font: 14px "Trebuchet MS", "Lucida Sans";
   padding: 0;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
