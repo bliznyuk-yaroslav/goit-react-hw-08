@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { toast } from "react-hot-toast";
 import { addContact } from "../../redux/contacts/operations";
 import { selectAllContacts } from "../../redux/contacts/selectors";
+import Button from "@mui/material/Button";
 
 const UserSchema = Yup.object().shape({
   name: Yup.string()
@@ -61,7 +62,6 @@ export default function ContactForm() {
           />
           <ErrorMessage className={css.error} name="name" component="span" />
         </div>
-
         <div className={css.formElem}>
           <label htmlFor="number" className={css.text}>
             Number
@@ -74,10 +74,14 @@ export default function ContactForm() {
           />
           <ErrorMessage className={css.error} name="number" component="span" />
         </div>
-
-        <button className={css.btn} type="submit">
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          sx={{ mt: 1, mb: 1 }}
+        >
           Add Contact
-        </button>
+        </Button>
       </Form>
     </Formik>
   );
