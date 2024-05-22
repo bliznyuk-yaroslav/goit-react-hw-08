@@ -1,8 +1,10 @@
 import { Form, Formik, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { toast } from "react-hot-toast";
 import { addContact } from "../../redux/contacts/operations";
+import { selectAllContacts } from "../../redux/contacts/selectors";
 
 const UserSchema = Yup.object().shape({
   name: Yup.string()
@@ -17,8 +19,23 @@ const UserSchema = Yup.object().shape({
 
 export default function ContactForm() {
   const dispatch = useDispatch();
+  const contacts = useSelector(selectAllContacts);
+  const checkContactExists = (contacts, name) => {
+    return contacts.some((el) => el.name.toLowerCase() === name.toLowerCase());
+  };
   const handleSubmit = (values, actions) => {
-    dispatch(addContact(values));
+    if (checkContactExists(contacts, values.name)) {
+      toast.error("This contact already exists");
+      return;
+    }
+    dispatch(addContact(values))
+      .unwrap()
+      .then((data) => {
+        toast.success("Success!!!");
+      })
+      .catch((error) => {
+        toast.error("Failed to add contac");
+      });
     actions.resetForm();
   };
 
@@ -65,26 +82,3 @@ export default function ContactForm() {
     </Formik>
   );
 }
-
-// const checkContactExists = (items, name) => {
-//   return items.some((el) => el.name.toLowerCase() === name.toLowerCase());
-// };
-
-// const dispatch = useDispatch();
-// const { items } = useSelector((state) => state.contacts);
-// const handleSubmit = (values, { resetForm }) => {
-//   const { name, number } = values;
-//   if (checkContactExists(items, name)) {
-//     alert(`${name} is already a contact`);
-//     resetForm();
-//   } else {
-//     dispatch(
-//       addContact({
-//         id: nanoid(),
-//         name,
-//         number,
-//       })
-//     );
-//     resetForm();
-//   }
-// };

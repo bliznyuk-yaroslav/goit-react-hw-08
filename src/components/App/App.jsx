@@ -28,30 +28,28 @@ export default function App() {
   return isRefreshing ? (
     <p>Refreshing user, please wait...</p>
   ) : (
-    <Suspense fallback={<p>Loading...</p>}>
-      <Layout>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route
-            path="/register"
-            element={
-              <RegisterRoute component={<RegistrationPage />} redirectTo="/" />
-            }
-          />
-          <Route
-            path="/login"
-            element={
-              <RegisterRoute component={<LoginPage />} redirectTo="/contacts" />
-            }
-          />
-          <Route
-            path="/contacts"
-            element={
-              <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
-            }
-          />
-        </Routes>
-      </Layout>
-    </Suspense>
+    <Layout>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route
+          path="/register"
+          element={
+            <RegisterRoute component={<RegistrationPage />} redirectTo="/" />
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <RegisterRoute component={<LoginPage />} redirectTo="/contacts" />
+          }
+        />
+        <Route
+          path="/contacts"
+          element={
+            <PrivateRoute component={<ContactsPage />} redirectTo="/login" />
+          }
+        />
+      </Routes>
+    </Layout>
   );
 }
