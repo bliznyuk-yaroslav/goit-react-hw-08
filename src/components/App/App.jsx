@@ -3,7 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { lazy, useEffect, Suspense } from "react";
 import Layout from "../Layout/Layout";
-import RegisterRoute from "../RegisterRoute/RegisterRoute";
+import RestrictedRoute from "../RestrictedRoute/RestrictedRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import { selectIsRefreshing } from "../../redux/auth/selectors";
 import { refreshUser } from "../../redux/auth/operations";
@@ -34,13 +34,13 @@ export default function App() {
         <Route
           path="/register"
           element={
-            <RegisterRoute component={<RegistrationPage />} redirectTo="/" />
+            <RestrictedRoute component={<RegistrationPage />} redirectTo="/" />
           }
         />
         <Route
           path="/login"
           element={
-            <RegisterRoute component={<LoginPage />} redirectTo="/contacts" />
+            <RestrictedRoute component={<LoginPage />} redirectTo="/contacts" />
           }
         />
         <Route
